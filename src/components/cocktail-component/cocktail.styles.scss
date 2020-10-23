@@ -1,0 +1,73 @@
+.cocktail-box {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 300px;
+  height: 500px;
+  margin-bottom: 25px;
+  margin: 25px;
+  text-align: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid black;
+  background-position: center;
+  background-size: cover;
+  padding: 25px;
+  justify-content: space-between;
+}
+
+.cocktail-box:hover .cocktail-overlay {
+  height: 510px;
+}
+
+.cocktail-title {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  margin: auto;
+  border: 1px solid white;
+  border-radius: 5px;
+  width: 80%;
+  font-family: "Sansita Swashed", cursive;
+}
+
+.cocktail-overlay {
+  position: relative;
+  top: -70px;
+  bottom: 0;
+  left: -50px;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  height: 0px;
+  width: 350px;
+  transition: 0.5s ease;
+}
+
+.tech,
+.price {
+  overflow: break-word;
+  text-align: center;
+  width: 80%;
+  font-size: 20px;
+  color: rgba(239, 243, 26, 1);
+  font-family: "Sansita Swashed", cursive;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.price {
+  top: 90%;
+}
+
+.cocktail-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background: black;
+}

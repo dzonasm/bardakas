@@ -1,0 +1,67 @@
+.header {
+  height: 120px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: black;
+  border-bottom: 1px solid lightgrey;
+  position: relative;
+
+  .logo-container {
+    height: 90px;
+    width: 90px;
+    margin-top: 15px;
+    margin-left: 15px;
+    cursor: pointer;
+    position: relative;
+    align-items: center;
+  }
+
+  .logo {
+    display: block;
+    text-indent: -9999px;
+    width: 90px;
+    height: 90px;
+    background-size: 100px 82px;
+  }
+
+  .options {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    .option {
+      padding: 10px 15px;
+      color: rgba(239, 243, 26, 1);
+      cursor: pointer;
+    }
+  }
+
+  .dakas {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    unicode-bidi: bidi-override;
+    direction: rtl;
+  }
+
+  .text-container {
+    display: flex;
+    flex-direction: row;
+    height: 80%;
+    position: absolute;
+    color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.option:hover {
+  background-color: rgba(99, 99, 99, 0.5);
+  font-weight: bolder;
+  border-radius: 10px;
+}

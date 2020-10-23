@@ -1,0 +1,27 @@
+.about-header {
+  display: block;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  color: white;
+  margin-top: 5vh;
+  margin-bottom: 10vh;
+}
+
+.about-description {
+  margin: auto;
+  color: white;
+  display: block;
+  text-align: center;
+  width: 50%;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 7vh;
+}
+
+.map-container {
+  margin: auto;
+  overflow: hidden;
+  border-radius: 5px;
+  height: 35vh;
+  width: 35vh;
+  align-items: center;
+}
