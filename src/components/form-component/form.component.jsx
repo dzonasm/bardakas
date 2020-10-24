@@ -4,6 +4,8 @@ import firebase from 'firebase'
 
 import { ReactComponent as Logo } from "../../assets/bear-logo-black.svg"
 
+import FormInput from '../form-input/form-input.component'
+
 import './form-component.styles.scss'
 
 function Form() {
@@ -23,6 +25,13 @@ function Form() {
     const docRef = firestore.doc('reservations/newReservation')
     const reservation = `name - ${name}, people - ${people}, date - ${date}, phone number - ${phone}`
 
+    const clearFormFields = () => {
+        setName("")
+        setDate("")
+        setPeople("")
+        setPhone("")
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault()
         console.log(reservation)
@@ -32,29 +41,24 @@ function Form() {
             console.log('status saved')
         }).catch((error) => {
             console.log(error)
-        })
-        setName('')
-        setPeople('')
-        setDate('')
-        setPhone('')
+        }).then(
+            clearFormFields()
+        )
     }
 
-    const getRealtimeUpdates = () => {
-        docRef.onSnapshot((doc) => {
-            if (doc && doc.exists) {
-                const myData = doc.data()
-                setFireData(myData.reservations).then(
-                    console.log(fireData)
-                )
-            }
-        })
-    }
+    //making realtime updates to reservsations
 
-
-
-
-
-
+    /*  const getRealtimeUpdates = () => {
+          docRef.onSnapshot((doc) => {
+              if (doc && doc.exists) {
+                  const myData = doc.data()
+                  setFireData(myData.reservations).then(
+                      console.log(fireData)
+                  )
+              }
+          })
+      }
+  */
 
     return (
         <div className='form-container'>
@@ -63,18 +67,13 @@ function Form() {
 
             <form className='form' onSubmit={handleSubmit}>
 
-                <input className='form-input' placeholder="Enter your name" value={name} onChange={handleName} require='true'></input>
+                <FormInput inputName='Name' handleChange={handleName} value={name} />
+                <FormInput inputName='People' handleChange={handlePeople} value={people} />
+                <FormInput inputName='Date' handleChange={handleDate} value={date} />
+                <FormInput inputName='Phone' handleChange={handlePhone} value={phone} />
 
+                <button className='contact-button' type='submit' >Submit</button>
 
-                <input className='form-input' placeholder='How many people' value={people} onChange={handlePeople} require='true'></input>
-
-
-                <input className='form-input' placeholder='Date and time of reservation' value={date} onChange={handleDate} require='true'></input>
-
-
-                <input className='form-input' placeholder='Contact phone number' value={phone} onChange={handlePhone} require='true'></input>
-
-                <button className='contact-button' type='submit'>Submit</button>
             </form>
         </div>
     )
@@ -86,3 +85,14 @@ function Form() {
 
 export default Form
 
+/*<input className='form-input' placeholder="Enter your name" value={name} onChange={handleName} require='true'></input>
+
+
+                <input className='form-input' placeholder='How many people' value={people} onChange={handlePeople} require='true'></input>
+
+
+                <input className='form-input' placeholder='Date and time of reservation' value={date} onChange={handleDate} require='true'></input>
+
+
+                <input className='form-input' placeholder='Contact phone number' value={phone} onChange={handlePhone} require='true'></input>
+                */
