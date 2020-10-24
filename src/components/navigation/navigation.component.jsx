@@ -37,7 +37,7 @@ function Navigation() {
             </div>
             <ul className='nav-links' style={navStyle}>
                 <li className={linksActive}><Link to='/'>Home</Link></li>
-                <li className={linksActive}><Link to='/food'>Menu</Link></li>
+                <li className={linksActive}><Link to='/menu'>Menu</Link></li>
                 <li className={linksActive}><Link to='contact'>Reservations</Link></li>
                 <li className={linksActive}><Link to='about'>About</Link></li>
             </ul>

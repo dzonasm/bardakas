@@ -37,11 +37,15 @@
   border-radius: 4px;
   border: 2px solid white;
   cursor: pointer;
+  transition: ease 0.3s;
+  padding: 5px;
+  width: 10rem;
 }
 
 .contact-button:hover {
-  background: white;
-  color: black;
+  background: rgba(0, 0, 0, 0.7);
+  color: #ff9a4f;
+  border: 2px solid #ff9a4f;
 }
 
 .form-container {

@@ -1,0 +1,31 @@
+.menu-options {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-family: "Poppins", sans-serif;
+  max-width: 500px;
+  width: 75%;
+  margin: auto;
+  margin-top: 5vh;
+  height: 4vh;
+  align-items: center;
+  font-weight: bolder;
+  background: transparent;
+}
+
+.menu-option {
+  cursor: pointer;
+  color: white;
+  border: 1px solid white;
+  padding: 5px;
+  width: 5rem;
+  text-align: center;
+  border-radius: 8px;
+  letter-spacing: 2px;
+  transition: ease 0.3s;
+}
+
+.menu-option:hover {
+  color: black;
+  background-color: white;
+}

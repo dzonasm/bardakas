@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import '../../firebase/firebase.config'
-import firebase from 'firebase'
+import { firestore } from '../../firebase/firebase.config'
 
 import { ReactComponent as Logo } from "../../assets/bear-logo-black.svg"
 
@@ -13,7 +13,6 @@ function Form() {
     let [people, setPeople] = useState('')
     let [date, setDate] = useState('')
     let [phone, setPhone] = useState('')
-    let [fireData, setFireData] = useState('')
 
     const handleName = (e) => setName(name = e.target.value)
     const handlePeople = (e) => setPeople(people = e.target.value)
@@ -21,7 +20,7 @@ function Form() {
     const handlePhone = (e) => setPhone(phone = e.target.value)
 
 
-    const firestore = firebase.firestore()
+    //const firestore = firebase.firestore()
     const docRef = firestore.doc('reservations/newReservation')
     const reservation = `name - ${name}, people - ${people}, date - ${date}, phone number - ${phone}`
 
@@ -72,7 +71,7 @@ function Form() {
                 <FormInput inputName='Date' handleChange={handleDate} value={date} />
                 <FormInput inputName='Phone' handleChange={handlePhone} value={phone} />
 
-                <button className='contact-button' type='submit' >Submit</button>
+                <button className='contact-button' type='submit' >Send</button>
 
             </form>
         </div>
