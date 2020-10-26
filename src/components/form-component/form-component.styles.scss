@@ -8,14 +8,15 @@
     margin-top: 5vh;
     display: block;
     text-indent: -9999px;
-    width: 110px;
-    height: 110px;
+    width: 150px;
+    height: 120px;
     background-size: 100px 82px;
   }
 
   .contact-header {
+    margin-top: 2rem;
     color: white;
-    font-family: "Poppins" sans-serif;
+    font-family: "Poppins", sans-serif;
   }
 }
 
@@ -33,7 +34,8 @@
   background: none;
   color: white;
   font-size: 20px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Poppins", sans-serif;
+  font-weight: bolder;
   border-radius: 4px;
   border: 2px solid white;
   cursor: pointer;

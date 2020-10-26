@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import '../../firebase/firebase.config'
 import { firestore } from '../../firebase/firebase.config'
+import { v4 as uudiv4 } from 'uuid'
 
 import { ReactComponent as Logo } from "../../assets/bear-logo-black.svg"
 
@@ -21,8 +22,13 @@ function Form() {
 
 
     //const firestore = firebase.firestore()
-    const docRef = firestore.doc('reservations/newReservation')
-    const reservation = `name - ${name}, people - ${people}, date - ${date}, phone number - ${phone}`
+    const docRef = firestore.doc(`reservations/${uudiv4()}`)
+    const reservation = {
+        name: { name },
+        people: { people },
+        date: { date },
+        phoneNumber: { phone }
+    }
 
     const clearFormFields = () => {
         setName("")
@@ -44,20 +50,6 @@ function Form() {
             clearFormFields()
         )
     }
-
-    //making realtime updates to reservsations
-
-    /*  const getRealtimeUpdates = () => {
-          docRef.onSnapshot((doc) => {
-              if (doc && doc.exists) {
-                  const myData = doc.data()
-                  setFireData(myData.reservations).then(
-                      console.log(fireData)
-                  )
-              }
-          })
-      }
-  */
 
     return (
         <div className='form-container'>

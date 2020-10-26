@@ -20,7 +20,7 @@ function MenuPage() {
     }
 
     return (
-        <div>
+        <div className='menu-page'>
             <div className="switch">
                 <div className='menu-options'>
                     <div className='menu-option' onClick={chooseFood}>Food</div>
